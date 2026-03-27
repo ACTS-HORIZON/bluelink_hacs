@@ -160,9 +160,6 @@ class HyundaiKiaConnectDataUpdateCoordinator(DataUpdateCoordinator):
                     )
                 except Exception:
                     _LOGGER.exception(f"Cached update failed: {traceback.format_exc()}")
-                    raise UpdateFailed(
-                        f"Error communicating with API: {traceback.format_exc()}"
-                    )
 
         else:
             try:
@@ -171,9 +168,6 @@ class HyundaiKiaConnectDataUpdateCoordinator(DataUpdateCoordinator):
                 )
             except Exception:
                 _LOGGER.exception(f"Cached update failed: {traceback.format_exc()}")
-                raise UpdateFailed(
-                    f"Error communicating with API: {traceback.format_exc()}"
-                )
 
         return self.data
 
